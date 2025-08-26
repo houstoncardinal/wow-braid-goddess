@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,6 +55,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom salon colors
+				gold: 'hsl(var(--gold))',
+				terracotta: 'hsl(var(--terracotta))',
+				'deep-brown': 'hsl(var(--deep-brown))',
+				'warm-beige': 'hsl(var(--warm-beige))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -88,7 +96,9 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-up': 'fade-up 0.6s ease-out',
+				'scale-in': 'scale-in 0.4s ease-out'
 			}
 		}
 	},
