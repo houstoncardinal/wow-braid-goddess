@@ -110,44 +110,71 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group">
+            <Card 
+              key={index} 
+              className="group hover:shadow-luxury transition-all duration-700 hover:-translate-y-2 relative overflow-hidden border-0 bg-gradient-to-br from-white to-luxury-cream backdrop-blur-sm"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               {service.popular && (
-                <Badge className="absolute top-4 right-4 bg-gradient-to-r from-gold to-terracotta text-white border-0">
-                  Popular
-                </Badge>
+                <div className="absolute top-0 right-0 w-0 h-0 border-l-[60px] border-l-transparent border-t-[60px] border-t-gradient-to-r from-gold to-terracotta">
+                  <span className="absolute -top-12 -right-1 text-white text-xs font-bold transform rotate-45">
+                    Popular
+                  </span>
+                </div>
               )}
               
-              <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-bold text-primary mb-2">
+              {/* Shimmer Effect */}
+              <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+              
+              <CardHeader className="pb-4 relative z-10">
+                <CardTitle className="text-xl font-bold text-primary mb-3 group-hover:text-terracotta transition-colors duration-300">
                   {service.category}
                 </CardTitle>
-                <div className="text-2xl font-bold text-terracotta">
+                <div className="text-3xl font-bold bg-gradient-to-r from-gold to-terracotta bg-clip-text text-transparent">
                   {service.price}
                 </div>
               </CardHeader>
               
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="relative z-10">
+                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                   {service.description}
                 </p>
               </CardContent>
               
-              {/* Hover gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              {/* Premium Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gold/5 via-transparent to-terracotta/5 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none"></div>
+              
+              {/* Bottom Border Effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold to-terracotta transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </Card>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <div className="inline-block p-6 bg-card rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-primary mb-2">Additional Services</h3>
-            <p className="text-muted-foreground">
-              • $10 wash & blow-dry (if hair not prepped)<br/>
-              • Hair consultation included with all services<br/>
-              • Touch-ups available for existing styles
-            </p>
+        <div className="mt-16 text-center">
+          <div className="inline-block p-8 bg-gradient-to-br from-white to-luxury-cream rounded-2xl shadow-luxury border border-gold/20 relative overflow-hidden">
+            {/* Decorative Elements */}
+            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-gold/20 to-transparent rounded-full -translate-x-10 -translate-y-10"></div>
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-terracotta/20 to-transparent rounded-full translate-x-16 translate-y-16"></div>
+            
+            <h3 className="text-2xl font-bold text-primary mb-4 relative z-10">Additional Services</h3>
+            <div className="text-muted-foreground leading-relaxed relative z-10">
+              <div className="grid md:grid-cols-3 gap-6 text-left">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-gold to-terracotta rounded-full"></div>
+                  <span>$10 wash & blow-dry (if hair not prepped)</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-gold to-terracotta rounded-full"></div>
+                  <span>Hair consultation included with all services</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-gold to-terracotta rounded-full"></div>
+                  <span>Touch-ups available for existing styles</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
